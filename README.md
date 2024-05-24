@@ -21,3 +21,5 @@ To Run the Scrapping
 3 - In my case the comand will be scrapy crawl mercadolivre -o ../../../data/data.jsonl
 
 
+GOALS:
+1 - check if there is a way to add a bash comand do run scrapy without the need of
