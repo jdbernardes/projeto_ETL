@@ -26,3 +26,8 @@ class Transform:
         df['new_price'] = df['new_price_reais'] +  df['new_price_centavos']/100
         df.drop(columns=['old_price_reais', 'old_price_centavos', 'new_price_reais', 'new_price_centavos'], inplace=True)
         return df
+    
+    def save_data_DB(self, df:pd.DataFrame, db_path:str)->None:
+        conn = sqlite3.connect(db_path)
+        df.to_sql('mercadolivre_items', conn, if_exists='replace', index=False)
+        conn.close()
